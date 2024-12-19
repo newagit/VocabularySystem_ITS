@@ -1,0 +1,22 @@
+<div class="w-64 bg-gray-800 text-white h-screen">
+    <h2 class="text-center text-2xl font-bold py-4 border-b">User Panel</h2>
+    <ul>
+        <li class="block p-4 hover:bg-gray-700 flex items-center">
+            <i class="fas fa-home mr-3"></i>
+            <a href="{{ url_for('user.dashboard') }}">Dashboard</a>
+        </li>
+        <li class="block p-4 hover:bg-gray-700 flex items-center">
+            <!-- <i class="fas fa-tasks mr-3"></i> -->
+        </li>
+     
+        
+        <li class="block p-4 hover:bg-gray-700 flex items-center">
+            <i class="fas fa-plus mr-3"></i>
+            <a href="{{ url_for('user.enroll') }}">Enroll in Courses</a>
+        </li>
+        <li class="block p-4 hover:bg-red-600 flex items-center">
+            <i class="fas fa-sign-out-alt mr-3"></i>
+            <a href="{{ url_for('auth.logout') }}">Logout</a>
+        </li>
+    </ul>
+</div>

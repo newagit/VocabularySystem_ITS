@@ -1,0 +1,49 @@
+{% extends "dashboard_layout.html" %}
+{% set sidebar = "components/sidebar_admin.html" %}
+{% block content %}
+<div class="container mx-auto p-6 bg-white rounded shadow">
+    <h2 class="text-3xl font-bold mb-6">Manage Vocabulary</h2>
+    <form action="/admin/manage_vocab/import" method="POST" enctype="multipart/form-data">
+        <input type="file" name="vocab_file" required>
+        <button type="submit">Import Vocabulary</button>
+    </form>
+
+    <h3 class="text-2xl font-bold mt-8 mb-4">Existing Vocabulary</h3>
+    <table class="table-auto w-full border-collapse border border-gray-200">
+        <thead>
+            <tr class="bg-gray-100">
+                <th class="border px-4 py-2">Word</th>
+                <th class="border px-4 py-2">Synonym</th>
+                <th class="border px-4 py-2">Antonym</th>
+                <th class="border px-4 py-2">Example</th>
+                <th class="border px-4 py-2">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for word in vocabulary %}
+            <tr>
+                <td class="border px-4 py-2">{{ word.rdf_about }}</td>
+                <td class="border px-4 py-2">{{ word.hasSynonym }}</td>
+                <td class="border px-4 py-2">{{ word.hasAntonym }}</td>
+                <td class="border px-4 py-2">{{ word.hasExample }}</td>
+                <td class="border px-4 py-2">
+                    <button onclick="deleteWord('{{ word.rdf_about }}')" class="bg-red-500 text-white px-4 py-2 rounded">Delete</button>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<script>
+function deleteWord(wordId) {
+    if (confirm("Are you sure you want to delete this word?")) {
+        fetch(`/admin/manage_vocab/delete/${wordId}`, {
+            method: "POST"
+        }).then(res => res.json()).then(data => {
+            if (data.success) location.reload();
+        });
+    }
+}
+</script>
+{% endblock %}

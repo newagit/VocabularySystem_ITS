@@ -1,0 +1,8 @@
+flask
+pymongo
+rdflib
+owlready2
+flask
+flask-pymongo
+flask-bcrypt
+rdflib

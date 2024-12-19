@@ -1,0 +1,133 @@
+
+
+{% block content %}
+
+<script src="https://cdn.tailwindcss.com"></script>
+<nav class="bg-white shadow-md py-4">
+    <div class="container mx-auto flex justify-between items-center">
+        <a href="/" class="text-2xl font-bold text-blue-500">Vocabulary System</a>
+        <ul class="flex space-x-6">
+            <li><a href="/login" class="text-gray-600 hover:text-blue-500">Login</a></li>
+            <li><a href="/register" class="text-gray-600 hover:text-blue-500">Register</a></li>
+            <li><a href="/about" class="text-gray-600 hover:text-blue-500">About</a></li>
+            <li><a href="/contact" class="text-gray-600 hover:text-blue-500">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<section class="bg-gray-100 py-16 px-4">
+    <div class="container mx-auto text-center">
+        <!-- Main Heading -->
+        <h1 class="text-4xl font-bold mb-8">About Us</h1>
+        <p class="text-lg text-gray-700 mb-6">
+            Welcome to Vocabulary System, your trusted platform for learning and teaching. We aim to revolutionize the way vocabulary is learned and taught, offering interactive tools for students, educators, and institutions.
+        </p>
+
+        <!-- Mission, Vision, and Values -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            <div class="p-6 bg-white rounded shadow">
+                <h3 class="text-2xl font-semibold mb-4">Our Mission</h3>
+                <p class="text-gray-600">
+                    To provide an effective and interactive way to enhance learning experiences by connecting students and educators on a single platform.
+                </p>
+            </div>
+            <div class="p-6 bg-white rounded shadow">
+                <h3 class="text-2xl font-semibold mb-4">Our Vision</h3>
+                <p class="text-gray-600">
+                    Empower educators and learners to achieve their full potential through advanced and innovative learning solutions.
+                </p>
+            </div>
+            <div class="p-6 bg-white rounded shadow">
+                <h3 class="text-2xl font-semibold mb-4">Our Values</h3>
+                <p class="text-gray-600">
+                    We value innovation, collaboration, inclusivity, and a commitment to educational excellence.
+                </p>
+            </div>
+        </div>
+
+        <!-- System Features -->
+        <h2 class="text-3xl font-bold mb-6">What Makes Us Unique</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+            <div class="p-6 bg-white rounded shadow">
+                <h3 class="text-xl font-semibold mb-4">Interactive Learning</h3>
+                <p class="text-gray-600">
+                    Our platform offers interactive learning tools, quizzes, and flashcards to enhance vocabulary retention and understanding.
+                </p>
+            </div>
+            <div class="p-6 bg-white rounded shadow">
+                <h3 class="text-xl font-semibold mb-4">Comprehensive Database</h3>
+                <p class="text-gray-600">
+                    Access a vast database of vocabulary resources curated for various educational levels and professional needs.
+                </p>
+            </div>
+            <div class="p-6 bg-white rounded shadow">
+                <h3 class="text-xl font-semibold mb-4">Personalized Learning</h3>
+                <p class="text-gray-600">
+                    Tailor your learning experience with personalized courses, progress tracking, and batch enrollment features.
+                </p>
+            </div>
+            <div class="p-6 bg-white rounded shadow">
+                <h3 class="text-xl font-semibold mb-4">For Students and Educators</h3>
+                <p class="text-gray-600">
+                    Designed to cater to both students and teachers, offering tools for effective teaching and self-paced learning.
+                </p>
+            </div>
+        </div>
+
+        <!-- Benefits Section -->
+        <h2 class="text-3xl font-bold mb-6">Why Choose Vocabulary System?</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+            <div class="p-6 bg-white rounded shadow">
+                <h3 class="text-xl font-semibold mb-4">Flexible and User-Friendly</h3>
+                <p class="text-gray-600">
+                    Our platform is easy to navigate, providing a seamless experience for users of all skill levels.
+                </p>
+            </div>
+            <div class="p-6 bg-white rounded shadow">
+                <h3 class="text-xl font-semibold mb-4">Analytics and Insights</h3>
+                <p class="text-gray-600">
+                    Get detailed insights and analytics to measure progress, track performance, and improve learning outcomes.
+                </p>
+            </div>
+            <div class="p-6 bg-white rounded shadow">
+                <h3 class="text-xl font-semibold mb-4">Secure and Reliable</h3>
+                <p class="text-gray-600">
+                    Our platform prioritizes data security and reliability to ensure a safe learning environment.
+                </p>
+            </div>
+            <div class="p-6 bg-white rounded shadow">
+                <h3 class="text-xl font-semibold mb-4">Collaborative Tools</h3>
+                <p class="text-gray-600">
+                    Teachers can create and manage batches, assign courses, and engage students effectively through collaborative tools.
+                </p>
+            </div>
+        </div>
+
+        <!-- Call-to-Action Section -->
+        <div class="bg-blue-500 text-white py-12 rounded">
+            <h2 class="text-3xl font-bold mb-4">Join the Vocabulary Revolution</h2>
+            <p class="mb-6">
+                Experience the future of learning and teaching. Sign up now and start your journey with the Vocabulary System.
+            </p>
+            <a href="/register" class="bg-white text-blue-500 px-6 py-3 rounded-full font-semibold hover:bg-gray-200">
+                Get Started Today
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="py-16 bg-blue-500 text-white text-center">
+    <div class="container mx-auto">
+        <h2 class="text-3xl font-bold mb-4">Ready to Get Started?</h2>
+        <p class="mb-6">Join us today and improve your learning journey.</p>
+        <a href="/login" class="bg-white text-blue-500 px-6 py-3 rounded-full font-semibold">Login</a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-800 text-white py-6">
+    <div class="container mx-auto text-center">
+        <p>&copy; 2024 Vocabulary System. All rights reserved.</p>
+    </div>
+</footer>
+{% endblock %}

@@ -1,0 +1,46 @@
+[{
+  "_id": {
+    "$oid": "67628c7baca341d28774ec8c"
+  },
+  "name": "2024",
+  "students": [
+    "Jane Smith"
+  ],
+  "teacher_id": "67628a342314c3c414d0c423"
+},
+{
+  "_id": {
+    "$oid": "67629cd0c6404ee50aab1883"
+  },
+  "name": "AA",
+  "teacher_id": [
+    {
+      "$oid": "676284a8fdd0c460356e7848"
+    }
+  ],
+  "students": []
+},
+{
+  "_id": {
+    "$oid": "67629cd5c6404ee50aab1884"
+  },
+  "name": "AA",
+  "teacher_id": [
+    {
+      "$oid": "676284a8fdd0c460356e7848"
+    }
+  ],
+  "students": []
+},
+{
+  "_id": {
+    "$oid": "67629cddc6404ee50aab1885"
+  },
+  "name": "aaa",
+  "teacher_id": [
+    {
+      "$oid": "676284a8fdd0c460356e7848"
+    }
+  ],
+  "students": []
+}]

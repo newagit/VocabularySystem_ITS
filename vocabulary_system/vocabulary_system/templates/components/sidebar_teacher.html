@@ -1,0 +1,21 @@
+<div class="w-64 bg-gray-800 text-white h-screen">
+    <h2 class="text-center text-2xl font-bold py-4 border-b">Teacher Panel</h2>
+    <ul>
+        <li class="block p-4 hover:bg-gray-700 flex items-center">
+            <i class="fas fa-home mr-3"></i>
+            <a href="{{ url_for('teacher.dashboard') }}">Dashboard</a>
+        </li>
+        <li class="block p-4 hover:bg-gray-700 flex items-center">
+            <i class="fas fa-users mr-3"></i>
+            <a href="{{ url_for('teacher.manage_batches') }}">Manage Batches</a>
+        </li>
+        <li class="block p-4 hover:bg-gray-700 flex items-center">
+            <i class="fas fa-user-graduate mr-3"></i>
+            <a href="{{ url_for('teacher.student_list') }}">Student List</a>
+        </li>
+        <li class="block p-4 hover:bg-red-600 flex items-center">
+            <i class="fas fa-sign-out-alt mr-3"></i>
+            <a href="{{ url_for('auth.logout') }}">Logout</a>
+        </li>
+    </ul>
+</div>

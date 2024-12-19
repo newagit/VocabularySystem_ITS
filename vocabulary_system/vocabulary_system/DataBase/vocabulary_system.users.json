@@ -1,0 +1,66 @@
+[{
+  "_id": {
+    "$oid": "6761b091d59f9352e11bab34"
+  },
+  "name": "Super Admin",
+  "email": "admin@example.com",
+  "password": "$2b$12$wxS41xhjxZFyYNrVlJI4p.Tp2Vorq/3qVfBHjJEzRPg9eBQIGefgq",
+  "role": "Admin",
+  "created_at": {
+    "$date": "2024-12-17T17:10:41.730Z"
+  },
+  "updated_at": {
+    "$date": "2024-12-17T17:10:41.731Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "676282874d80fc95388a40b0"
+  },
+  "name": "asbin",
+  "email": "asbin@gmail.com",
+  "password": "$2b$12$rqH2ge9cIi9VvzG8AVJy8.Cq6OdpgavJxKGeqt.XFFODo3jumay4a",
+  "role": "User",
+  "created_at": {
+    "$date": "2024-12-18T08:06:31.158Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67628a342314c3c414d0c422"
+  },
+  "name": "Admin",
+  "email": "admin@example.com",
+  "password": "$2b$12$sg1bkVdvc7zKCoyTjeY74.PZjHiIxPWns5WSWhZp4FmiAWEDbBGMe",
+  "role": "Admin"
+},
+{
+  "_id": {
+    "$oid": "67628a342314c3c414d0c423"
+  },
+  "name": "John Doe",
+  "email": "teacher@example.com",
+  "password": "$2b$12$dDXYuy.2TEaa8BnEEOwJN.tI2wuFAfQWumtuuwvFP6vJBaweeTLTG",
+  "role": "Teacher"
+},
+{
+  "_id": {
+    "$oid": "67628a342314c3c414d0c424"
+  },
+  "name": "Jane Smith",
+  "email": "user@example.com",
+  "password": "$2b$12$ivkLTqk0it4P1C/0F30PGOEFiYAh4q5lRybydkUHA3IbWC4P2Q0/a",
+  "role": "User"
+},
+{
+  "_id": {
+    "$oid": "6763c90488c62d91bddbb3de"
+  },
+  "name": "purnashtrestha",
+  "email": "purna@gmail.com",
+  "password": "$2b$12$nKCD5FOYYh/AY/2D7FYP8eroIioLDbHMC3G3rjXkFY.d8kyAaYgpS",
+  "role": "User",
+  "created_at": {
+    "$date": "2024-12-19T07:19:32.448Z"
+  }
+}]

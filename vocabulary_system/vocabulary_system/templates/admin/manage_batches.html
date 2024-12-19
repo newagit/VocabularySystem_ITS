@@ -1,0 +1,92 @@
+{% extends "dashboard_layout.html" %}
+{% set sidebar = "components/sidebar_admin.html" %}
+{% block content %}
+<div class="container mx-auto p-6 bg-white rounded shadow">
+    <h2 class="text-3xl font-bold mb-6">Manage Batches</h2>
+    <form id="add-batch-form" method="POST">
+        <input type="text" name="name" placeholder="Batch Name" class="border p-2 mb-4 w-full" required>
+        <label class="block text-gray-700">Assign Teachers</label>
+        <select name="teacher_ids" class="border p-2 mb-4 w-full" multiple required>
+            {% for teacher in teachers %}
+            <option value="{{ teacher._id }}">{{ teacher.name }}</option>
+            {% endfor %}
+        </select>
+        <button class="bg-blue-500 text-white px-4 py-2 rounded">Add Batch</button>
+    </form>
+
+    <h3 class="text-2xl font-bold mt-8 mb-4">Existing Batches</h3>
+    <table class="table-auto w-full border-collapse border border-gray-200">
+        <thead>
+            <tr class="bg-gray-100">
+                <th class="border px-4 py-2">Batch Name</th>
+                <th class="border px-4 py-2">Teachers</th>
+                <th class="border px-4 py-2">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for batch in batches %}
+            <tr>
+                <td class="border px-4 py-2">{{ batch.name }}</td>
+                <td class="border px-4 py-2">
+                    {% for teacher_id in batch.teacher_id %}
+                    {% set teacher = teachers | selectattr('_id', 'equalto', teacher_id) | first %}
+                    {{ teacher.name }}{% if not loop.last %}, {% endif %}
+                    {% endfor %}
+                </td>
+                <td class="border px-4 py-2">
+                    <button onclick="editBatch('{{ batch._id }}', '{{ batch.name }}')" class="bg-yellow-500 text-white px-4 py-2 rounded">Edit</button>
+                    <button onclick="deleteBatch('{{ batch._id }}')" class="bg-red-500 text-white px-4 py-2 rounded">Delete</button>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<!-- Edit Batch Modal -->
+<div id="edit-batch-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+    <div class="bg-white p-6 rounded shadow w-1/3">
+        <h3 class="text-2xl font-bold mb-4">Edit Batch</h3>
+        <form id="edit-batch-form">
+            <input type="hidden" name="batch_id" id="edit-batch-id">
+            <input type="text" name="name" id="edit-batch-name" class="border p-2 mb-4 w-full" required>
+            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Update</button>
+        </form>
+        <button onclick="closeEditModal()" class="mt-4 bg-gray-500 text-white px-4 py-2 rounded">Cancel</button>
+    </div>
+</div>
+
+<script>
+function deleteBatch(batchId) {
+    if (confirm("Are you sure you want to delete this batch?")) {
+        fetch(`/admin/manage_batches/delete/${batchId}`, {
+            method: "POST"
+        }).then(res => res.json()).then(data => {
+            if (data.success) location.reload();
+        });
+    }
+}
+
+function editBatch(batchId, name) {
+    document.getElementById("edit-batch-id").value = batchId;
+    document.getElementById("edit-batch-name").value = name;
+    document.getElementById("edit-batch-modal").classList.remove("hidden");
+}
+
+function closeEditModal() {
+    document.getElementById("edit-batch-modal").classList.add("hidden");
+}
+
+document.getElementById("edit-batch-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+    const formData = new FormData(this);
+    const batchId = formData.get("batch_id");
+    fetch(`/admin/manage_batches/edit/${batchId}`, {
+        method: "POST",
+        body: formData
+    }).then(res => res.json()).then(data => {
+        if (data.success) location.reload();
+    });
+});
+</script>
+{% endblock %}

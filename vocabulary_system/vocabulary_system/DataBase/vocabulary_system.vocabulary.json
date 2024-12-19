@@ -1,0 +1,320 @@
+[{
+  "_id": {
+    "$oid": "6763ca776cbeeda6b59a6b31"
+  },
+  "word": "Aberration",
+  "definition": "A departure from what is normal or expected.",
+  "synonyms": [
+    "Anomaly",
+    "Deviation"
+  ],
+  "antonyms": [
+    "Normality",
+    "Regularity"
+  ],
+  "example": "The scientist explained the unexpected results as an aberration."
+},
+{
+  "_id": {
+    "$oid": "6763ca776cbeeda6b59a6b32"
+  },
+  "word": "Benevolent",
+  "definition": "Well-meaning and kindly.",
+  "synonyms": [
+    "Kind",
+    "Generous"
+  ],
+  "antonyms": [
+    "Malevolent",
+    "Cruel"
+  ],
+  "example": "The benevolent woman donated a large sum to the charity."
+},
+{
+  "_id": {
+    "$oid": "6763ca776cbeeda6b59a6b33"
+  },
+  "word": "Candid",
+  "definition": "Truthful and straightforward.",
+  "synonyms": [
+    "Honest",
+    "Frank"
+  ],
+  "antonyms": [
+    "Deceptive",
+    "Evasive"
+  ],
+  "example": "His candid opinion was appreciated during the meeting."
+},
+{
+  "_id": {
+    "$oid": "6763ca776cbeeda6b59a6b34"
+  },
+  "word": "Daunting",
+  "definition": "Seeming difficult to deal with in anticipation.",
+  "synonyms": [
+    "Intimidating",
+    "Challenging"
+  ],
+  "antonyms": [
+    "Encouraging",
+    "Simple"
+  ],
+  "example": "The daunting task of climbing the mountain did not deter the hikers."
+},
+{
+  "_id": {
+    "$oid": "6763ca776cbeeda6b59a6b35"
+  },
+  "word": "Eloquent",
+  "definition": "Fluent or persuasive in speaking or writing.",
+  "synonyms": [
+    "Articulate",
+    "Expressive"
+  ],
+  "antonyms": [
+    "Inarticulate",
+    "Unclear"
+  ],
+  "example": "The lawyer gave an eloquent speech to defend her client."
+},
+{
+  "_id": {
+    "$oid": "6763ca776cbeeda6b59a6b36"
+  },
+  "word": "Futile",
+  "definition": "Incapable of producing any useful result; pointless.",
+  "synonyms": [
+    "Vain",
+    "Ineffective"
+  ],
+  "antonyms": [
+    "Effective",
+    "Useful"
+  ],
+  "example": "The efforts to save the damaged ship were ultimately futile."
+},
+{
+  "_id": {
+    "$oid": "6763ca776cbeeda6b59a6b37"
+  },
+  "word": "Gregarious",
+  "definition": "Fond of company; sociable.",
+  "synonyms": [
+    "Outgoing",
+    "Friendly"
+  ],
+  "antonyms": [
+    "Introverted",
+    "Shy"
+  ],
+  "example": "The gregarious host made everyone feel welcome at the party."
+},
+{
+  "_id": {
+    "$oid": "6763ca776cbeeda6b59a6b38"
+  },
+  "word": "Hapless",
+  "definition": "Unfortunate or unlucky.",
+  "synonyms": [
+    "Unlucky",
+    "Ill-fated"
+  ],
+  "antonyms": [
+    "Lucky",
+    "Fortunate"
+  ],
+  "example": "The hapless traveler lost his passport and luggage."
+},
+{
+  "_id": {
+    "$oid": "6763ca776cbeeda6b59a6b39"
+  },
+  "word": "Imminent",
+  "definition": "About to happen.",
+  "synonyms": [
+    "Impending",
+    "Approaching"
+  ],
+  "antonyms": [
+    "Distant",
+    "Remote"
+  ],
+  "example": "The dark clouds signaled an imminent storm."
+},
+{
+  "_id": {
+    "$oid": "6763ca776cbeeda6b59a6b3a"
+  },
+  "word": "Jovial",
+  "definition": "Cheerful and friendly.",
+  "synonyms": [
+    "Happy",
+    "Merry"
+  ],
+  "antonyms": [
+    "Sad",
+    "Gloomy"
+  ],
+  "example": "Her jovial nature brightened everyone's day."
+},
+{
+  "_id": {
+    "$oid": "6763ca776cbeeda6b59a6b3b"
+  },
+  "word": "Keen",
+  "definition": "Having or showing eagerness or enthusiasm.",
+  "synonyms": [
+    "Eager",
+    "Enthusiastic"
+  ],
+  "antonyms": [
+    "Apathetic",
+    "Disinterested"
+  ],
+  "example": "She was keen to start her new job."
+},
+{
+  "_id": {
+    "$oid": "6763ca776cbeeda6b59a6b3c"
+  },
+  "word": "Lethargic",
+  "definition": "Affected by a lack of energy or enthusiasm.",
+  "synonyms": [
+    "Sluggish",
+    "Tired"
+  ],
+  "antonyms": [
+    "Energetic",
+    "Lively"
+  ],
+  "example": "The heat made everyone feel lethargic."
+},
+{
+  "_id": {
+    "$oid": "6763ca776cbeeda6b59a6b3d"
+  },
+  "word": "Meticulous",
+  "definition": "Showing great attention to detail.",
+  "synonyms": [
+    "Precise",
+    "Thorough"
+  ],
+  "antonyms": [
+    "Careless",
+    "Hasty"
+  ],
+  "example": "The artist was meticulous in painting every detail."
+},
+{
+  "_id": {
+    "$oid": "6763ca776cbeeda6b59a6b3e"
+  },
+  "word": "Notorious",
+  "definition": "Famous or well-known, typically for some bad quality or deed.",
+  "synonyms": [
+    "Infamous",
+    "Disreputable"
+  ],
+  "antonyms": [
+    "Unknown",
+    "Reputable"
+  ],
+  "example": "The town is notorious for its high crime rate."
+},
+{
+  "_id": {
+    "$oid": "6763ca776cbeeda6b59a6b3f"
+  },
+  "word": "Oblivious",
+  "definition": "Not aware of or not concerned about what is happening around.",
+  "synonyms": [
+    "Unaware",
+    "Ignorant"
+  ],
+  "antonyms": [
+    "Aware",
+    "Conscious"
+  ],
+  "example": "She was oblivious to the fact that everyone was watching her."
+},
+{
+  "_id": {
+    "$oid": "6763ca776cbeeda6b59a6b40"
+  },
+  "word": "Pensive",
+  "definition": "Engaged in deep or serious thought.",
+  "synonyms": [
+    "Thoughtful",
+    "Reflective"
+  ],
+  "antonyms": [
+    "Carefree",
+    "Unthinking"
+  ],
+  "example": "He appeared pensive as he stared out the window."
+},
+{
+  "_id": {
+    "$oid": "6763ca776cbeeda6b59a6b41"
+  },
+  "word": "Quaint",
+  "definition": "Attractively unusual or old-fashioned.",
+  "synonyms": [
+    "Charming",
+    "Picturesque"
+  ],
+  "antonyms": [
+    "Modern",
+    "Ordinary"
+  ],
+  "example": "The village had a quaint charm with its cobblestone streets."
+},
+{
+  "_id": {
+    "$oid": "6763ca776cbeeda6b59a6b42"
+  },
+  "word": "Resilient",
+  "definition": "Able to recover quickly from difficulties.",
+  "synonyms": [
+    "Hardy",
+    "Robust"
+  ],
+  "antonyms": [
+    "Fragile",
+    "Vulnerable"
+  ],
+  "example": "She proved to be resilient in the face of adversity."
+},
+{
+  "_id": {
+    "$oid": "6763ca776cbeeda6b59a6b43"
+  },
+  "word": "Serene",
+  "definition": "Calm, peaceful, and untroubled.",
+  "synonyms": [
+    "Tranquil",
+    "Peaceful"
+  ],
+  "antonyms": [
+    "Chaotic",
+    "Agitated"
+  ],
+  "example": "The serene landscape was a welcome sight after the busy city."
+},
+{
+  "_id": {
+    "$oid": "6763ca776cbeeda6b59a6b44"
+  },
+  "word": "Tangible",
+  "definition": "Perceptible by touch.",
+  "synonyms": [
+    "Touchable",
+    "Concrete"
+  ],
+  "antonyms": [
+    "Intangible",
+    "Abstract"
+  ],
+  "example": "The evidence provided was tangible and irrefutable."
+}]

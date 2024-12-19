@@ -1,0 +1,11 @@
+<script src="https://cdn.tailwindcss.com"></script>
+{% extends "dashboard_layout.html" %}
+{% set sidebar = "components/sidebar_admin.html" %}
+{% block content %}
+<h1 class="text-3xl font-bold">Admin Dashboard</h1>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+    <a href="{{ url_for('admin.manage_courses') }}" class="bg-blue-500 p-4 text-white rounded shadow text-center">Manage Courses</a>
+    <a href="{{ url_for('admin.manage_teachers') }}" class="bg-green-500 p-4 text-white rounded shadow text-center">Manage Teachers</a>
+    <a href="{{ url_for('admin.import_vocab') }}" class="bg-yellow-500 p-4 text-white rounded shadow text-center">Import Vocabulary</a>
+</div>
+{% endblock %}

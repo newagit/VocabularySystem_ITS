@@ -1,0 +1,65 @@
+[{
+  "_id": {
+    "$oid": "676284a8fdd0c460356e7848"
+  },
+  "name": "kashitiz",
+  "email": "kshitiz@gmail.com",
+  "created_at": {
+    "$date": "2024-12-18T08:15:36.033Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6762886aac9028307478b07f"
+  },
+  "name": "kashitiz",
+  "email": "kshitiz@gmail.com",
+  "password": null,
+  "created_at": {
+    "$date": "2024-12-18T08:31:38.212Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67628895ac9028307478b080"
+  },
+  "name": "kashitiz",
+  "email": "kshitiz@gmail.com",
+  "password": null,
+  "created_at": {
+    "$date": "2024-12-18T08:32:21.196Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "676288a9ac9028307478b081"
+  },
+  "name": "asbin",
+  "email": "asbin1@gmail.com",
+  "password": "$2b$12$rTTMX2LGbQ/m1UmAzkXYCe5x9fL3VWbu9uzWSp2v1vyDODrg.pzKy",
+  "created_at": {
+    "$date": "2024-12-18T08:32:41.150Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6762a02893cd5c5f6b014507"
+  },
+  "name": "kashitiz",
+  "email": "kshitz@gmail.com",
+  "password": null,
+  "created_at": {
+    "$date": "2024-12-18T10:12:56.798Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6762a03693cd5c5f6b014508"
+  },
+  "name": "abc",
+  "email": "kshitiz@gmail.com",
+  "password": null,
+  "created_at": {
+    "$date": "2024-12-18T10:13:10.566Z"
+  }
+}]

@@ -1,0 +1,151 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.example.org/vocabulary_system#"
+     xml:base="http://www.example.org/vocabulary_system"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+
+    <!-- Ontology -->
+    <owl:Ontology rdf:about="http://www.example.org/vocabulary_system"/>
+
+    <!-- Classes -->
+    <owl:Class rdf:about="User"/>
+    <owl:Class rdf:about="Admin">
+        <rdfs:subClassOf rdf:resource="User"/>
+    </owl:Class>
+    <owl:Class rdf:about="Teacher">
+        <rdfs:subClassOf rdf:resource="User"/>
+    </owl:Class>
+    <owl:Class rdf:about="Student">
+        <rdfs:subClassOf rdf:resource="User"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="Word"/>
+    <owl:Class rdf:about="Noun">
+        <rdfs:subClassOf rdf:resource="Word"/>
+    </owl:Class>
+    <owl:Class rdf:about="Verb">
+        <rdfs:subClassOf rdf:resource="Word"/>
+    </owl:Class>
+    <owl:Class rdf:about="Adjective">
+        <rdfs:subClassOf rdf:resource="Word"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="Course"/>
+    <owl:Class rdf:about="BeginnerCourse">
+        <rdfs:subClassOf rdf:resource="Course"/>
+    </owl:Class>
+    <owl:Class rdf:about="IntermediateCourse">
+        <rdfs:subClassOf rdf:resource="Course"/>
+    </owl:Class>
+    <owl:Class rdf:about="AdvancedCourse">
+        <rdfs:subClassOf rdf:resource="Course"/>
+    </owl:Class>
+
+    <!-- Object Properties -->
+    <owl:ObjectProperty rdf:about="teaches">
+        <rdfs:domain rdf:resource="Teacher"/>
+        <rdfs:range rdf:resource="Course"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="enrollsIn">
+        <rdfs:domain rdf:resource="Student"/>
+        <rdfs:range rdf:resource="Course"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="defines">
+        <rdfs:domain rdf:resource="Word"/>
+        <rdfs:range rdf:resource="Definition"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="contains">
+        <rdfs:domain rdf:resource="Course"/>
+        <rdfs:range rdf:resource="Word"/>
+    </owl:ObjectProperty>
+
+    <!-- Data Properties -->
+    <owl:DatatypeProperty rdf:about="hasName">
+        <rdfs:domain rdf:resource="User"/>
+        <rdfs:range rdf:resource="xsd:string"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="hasEmail">
+        <rdfs:domain rdf:resource="User"/>
+        <rdfs:range rdf:resource="xsd:string"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="hasWord">
+        <rdfs:domain rdf:resource="Word"/>
+        <rdfs:range rdf:resource="xsd:string"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="hasDefinition">
+        <rdfs:domain rdf:resource="Word"/>
+        <rdfs:range rdf:resource="xsd:string"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="hasTitle">
+        <rdfs:domain rdf:resource="Course"/>
+        <rdfs:range rdf:resource="xsd:string"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="hasDescription">
+        <rdfs:domain rdf:resource="Course"/>
+        <rdfs:range rdf:resource="xsd:string"/>
+    </owl:DatatypeProperty>
+
+    <!-- Individuals -->
+
+    <!-- Users -->
+    <Admin rdf:about="Admin1">
+        <hasName rdf:datatype="xsd:string">John Admin</hasName>
+        <hasEmail rdf:datatype="xsd:string">admin1@example.com</hasEmail>
+    </Admin>
+
+    <Teacher rdf:about="Teacher1">
+        <hasName rdf:datatype="xsd:string">Alice Teacher</hasName>
+        <hasEmail rdf:datatype="xsd:string">teacher1@example.com</hasEmail>
+    </Teacher>
+
+    <Student rdf:about="Student1">
+        <hasName rdf:datatype="xsd:string">Bob Student</hasName>
+        <hasEmail rdf:datatype="xsd:string">student1@example.com</hasEmail>
+    </Student>
+
+    <!-- Words -->
+    <Noun rdf:about="Word_Cat">
+        <hasWord rdf:datatype="xsd:string">Cat</hasWord>
+        <hasDefinition rdf:datatype="xsd:string">A small domesticated carnivorous mammal with soft fur.</hasDefinition>
+    </Noun>
+
+    <Verb rdf:about="Word_Run">
+        <hasWord rdf:datatype="xsd:string">Run</hasWord>
+        <hasDefinition rdf:datatype="xsd:string">To move swiftly on foot.</hasDefinition>
+    </Verb>
+
+    <Adjective rdf:about="Word_Brilliant">
+        <hasWord rdf:datatype="xsd:string">Brilliant</hasWord>
+        <hasDefinition rdf:datatype="xsd:string">Exceptionally clever or talented.</hasDefinition>
+    </Adjective>
+
+    <!-- Courses -->
+    <BeginnerCourse rdf:about="Course1">
+        <hasTitle rdf:datatype="xsd:string">Introduction to Vocabulary</hasTitle>
+        <hasDescription rdf:datatype="xsd:string">A course for beginners to learn basic words.</hasDescription>
+        <contains rdf:resource="Word_Cat"/>
+    </BeginnerCourse>
+
+    <IntermediateCourse rdf:about="Course2">
+        <hasTitle rdf:datatype="xsd:string">Intermediate Word Usage</hasTitle>
+        <hasDescription rdf:datatype="xsd:string">Building upon vocabulary with intermediate level words.</hasDescription>
+        <contains rdf:resource="Word_Run"/>
+    </IntermediateCourse>
+
+    <AdvancedCourse rdf:about="Course3">
+        <hasTitle rdf:datatype="xsd:string">Mastering Descriptive Language</hasTitle>
+        <hasDescription rdf:datatype="xsd:string">Learn how to use adjectives for detailed descriptions.</hasDescription>
+        <contains rdf:resource="Word_Brilliant"/>
+    </AdvancedCourse>
+
+</rdf:RDF>

@@ -1,0 +1,28 @@
+{% extends "dashboard_layout.html" %}
+{% set sidebar = "components/sidebar_teacher.html" %}
+{% block content %}
+<div class="container mx-auto p-6 bg-white rounded shadow">
+    <h2 class="text-3xl font-bold mb-6">Manage Batches</h2>
+    <form method="POST" class="space-y-4">
+        <div>
+            <label for="name" class="block text-gray-700">Batch Name</label>
+            <input type="text" name="name" id="name" class="w-full border p-2 rounded focus:outline-none focus:border-blue-500" placeholder="Batch Name" required>
+        </div>
+        <div>
+            <label for="students" class="block text-gray-700">Select Users</label>
+            <select name="student_ids" id="students" class="w-full border p-2 rounded focus:outline-none focus:border-blue-500" multiple>
+                {% for user in students %}
+                    <option value="{{ user['_id'] }}">{{ user['name'] }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded">Create Batch</button>
+    </form>
+    <h3 class="text-2xl font-bold mt-6">Existing Batches</h3>
+    <ul class="list-disc pl-8">
+        {% for batch in batches %}
+            <li>{{ batch.name }} - {{ batch.students|length }} Users</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

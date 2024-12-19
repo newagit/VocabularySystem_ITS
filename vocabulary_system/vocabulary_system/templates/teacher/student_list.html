@@ -1,0 +1,23 @@
+{% extends "dashboard_layout.html" %}
+{% set sidebar = "components/sidebar_teacher.html" %}
+{% block content %}
+<h1 class="text-3xl font-bold text-gray-800 mb-4">Student List</h1>
+<table class="table-auto w-full bg-white shadow-md rounded">
+    <thead>
+        <tr class="bg-gray-200 text-gray-700">
+            <th class="px-4 py-2">Name</th>
+            <th class="px-4 py-2">Email</th>
+            <th class="px-4 py-2">Batch</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for user in students %}
+        <tr class="border-t">
+            <td class="px-4 py-2">{{ user.name }}</td>
+            <td class="px-4 py-2">{{ user.email }}</td>
+            <td class="px-4 py-2">{{ user.batch_name }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

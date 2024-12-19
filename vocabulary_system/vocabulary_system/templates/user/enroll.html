@@ -1,0 +1,20 @@
+{% extends "dashboard_layout.html" %}
+{% set sidebar = "components/sidebar_user.html" %}
+{% block content %}
+<div class="container mx-auto p-6 bg-white rounded shadow">
+    <h2 class="text-3xl font-bold mb-6">Enroll in a Course</h2>
+    <form method="POST" class="space-y-4">
+        <div>
+            <label for="course" class="block text-gray-700">Available Courses</label>
+            <select name="course_id" id="course" class="w-full border p-2 rounded focus:outline-none focus:border-blue-500">
+                {% for course in courses %}
+                    <option value="{{ course._id }}">{{ course.title }} - {{ course.description }}</option>
+                {% else %}
+                    <option disabled>No available courses</option>
+                {% endfor %}
+            </select>
+        </div>
+        <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded">Enroll</button>
+    </form>
+</div>
+{% endblock %}

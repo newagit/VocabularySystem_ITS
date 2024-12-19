@@ -1,0 +1,37 @@
+{% extends "dashboard_layout.html" %}
+{% set sidebar = "components/sidebar_admin.html" %}
+{% block content %}
+<div class="container mx-auto p-6 bg-white rounded shadow">
+    <h2 class="text-3xl font-bold mb-6">Manage Users</h2>
+    <table class="table-auto w-full border-collapse border border-gray-200">
+        <thead>
+            <tr class="bg-gray-100">
+                <th class="border px-4 py-2">Name</th>
+                <th class="border px-4 py-2">Email</th>
+                <th class="border px-4 py-2">Role</th>
+                <th class="border px-4 py-2">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            <tr>
+                <td class="border px-4 py-2">{{ user.name }}</td>
+                <td class="border px-4 py-2">{{ user.email }}</td>
+                <td class="border px-4 py-2">{{ user.role }}</td>
+                <td class="border px-4 py-2">
+                    <form method="POST">
+                        <input type="hidden" name="user_id" value="{{ user._id }}">
+                        <select name="role" class="border p-2 rounded">
+                            <option value="Admin" {% if user.role == "Admin" %}selected{% endif %}>Admin</option>
+                            <option value="Teacher" {% if user.role == "Teacher" %}selected{% endif %}>Teacher</option>
+                            <option value="User" {% if user.role == "User" %}selected{% endif %}>User</option>
+                        </select>
+                        <button class="bg-blue-500 text-white px-4 py-2 rounded">Update</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

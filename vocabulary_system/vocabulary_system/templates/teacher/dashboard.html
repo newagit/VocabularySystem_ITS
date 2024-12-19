@@ -1,0 +1,15 @@
+{% extends "dashboard_layout.html" %}
+{% set sidebar = "components/sidebar_user.html" %}
+{% block content %}
+<div class="container mx-auto p-6 bg-white rounded shadow">
+    <h2 class="text-3xl font-bold mb-6">Dashboard</h2>
+    <h3 class="text-2xl font-bold mb-4">Your Enrolled Courses</h3>
+    <ul class="list-disc pl-8">
+        {% for course in courses %}
+            <li>{{ course.title }} - {{ course.description }}</li>
+        {% else %}
+            <li>No enrolled courses yet.</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

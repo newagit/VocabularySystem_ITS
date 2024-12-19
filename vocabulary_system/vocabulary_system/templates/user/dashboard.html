@@ -1,0 +1,139 @@
+{% extends "dashboard_layout.html" %}
+{% set sidebar = "components/sidebar_user.html" %}
+{% block content %}
+<h1 class="text-3xl font-bold text-gray-800 mb-4">User Dashboard</h1>
+<p class="text-gray-600 mb-6">Manage your enrolled batches and courses.</p>
+
+<h2 class="text-2xl font-bold mb-4">Enrolled Batches</h2>
+<ul class="list-disc pl-8">
+    {% for batch in enrolled_batches %}
+        <li>{{ batch.name }}</li>
+    {% endfor %}
+</ul>
+
+<h2 class="text-2xl font-bold mt-6 mb-4">Enrolled Courses</h2>
+<ul class="list-disc pl-8">
+    {% for course in enrolled_courses %}
+        <li>{{ course.name }}</li>
+    {% endfor %}
+</ul>
+
+<div class="mt-8">
+    <!-- Button to trigger quiz modal -->
+    <button id="openQuizModal" class="px-4 py-2 bg-blue-600 text-white font-semibold rounded hover:bg-blue-700">
+        Take a Quiz
+    </button>
+</div>
+
+<!-- Quiz Modal -->
+<div id="quizModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+    <div class="bg-white p-6 rounded shadow-lg max-w-3xl w-full relative">
+        <!-- Close button -->
+        <button id="closeQuizModal" class="absolute top-3 right-3 text-red-500 font-bold text-xl">&times;</button>
+        <h2 class="text-2xl font-bold mb-6">Dynamic Quiz</h2>
+        <div class="overflow-y-auto max-h-96 p-4 border rounded">
+            <form id="quizModalForm" method="POST" class="space-y-6">
+                <!-- Quiz questions will be rendered dynamically -->
+            </form>
+        </div>
+        <button type="submit" id="submitQuiz" class="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded mt-4">
+            Submit Quiz
+        </button>
+    </div>
+</div>
+
+<div id="resultContainer" class="hidden container mx-auto p-6 bg-white rounded shadow mt-10">
+    <h2 class="text-3xl font-bold mb-6">Quiz Results</h2>
+    <p class="text-lg font-medium">Score: <span id="score"></span>/50</p>
+    <ul id="answers" class="space-y-2 mt-4"></ul>
+    <div id="feedback" class="mt-6"></div>
+</div>
+
+<script>
+    // Sample questions JSON
+    const quizQuestions = [
+        { text: "What is the synonym of 'happy'?", options: ["Sad", "Elated", "Angry", "Tired"], answer: "Elated" },
+        { text: "Choose the correct spelling:", options: ["Definately", "Definitely", "Defenitely", "Definetly"], answer: "Definitely" },
+        { text: "What is the antonym of 'cold'?", options: ["Hot", "Warm", "Cool", "Chilly"], answer: "Hot" },
+        { text: "Which word means 'to run away'?", options: ["Flee", "Stay", "Pause", "Wait"], answer: "Flee" },
+        { text: "Select the correct meaning of 'obsolete':", options: ["New", "Outdated", "Shiny", "Modern"], answer: "Outdated" },
+        { text: "What is a synonym of 'intelligent'?", options: ["Dumb", "Smart", "Silly", "Lazy"], answer: "Smart" },
+        { text: "What is the antonym of 'begin'?", options: ["Start", "Initiate", "End", "Commence"], answer: "End" },
+        { text: "Which word means 'extremely large'?", options: ["Tiny", "Huge", "Small", "Little"], answer: "Huge" },
+        { text: "Choose the correct synonym for 'fast':", options: ["Slow", "Quick", "Delayed", "Lethargic"], answer: "Quick" },
+        { text: "What is the antonym of 'light'?", options: ["Dark", "Bright", "Clear", "Visible"], answer: "Dark" }
+    ];
+
+    // Render questions dynamically in the modal form
+    const quizModalForm = document.getElementById('quizModalForm');
+    quizModalForm.innerHTML = '';
+
+    quizQuestions.forEach((question, index) => {
+        const questionDiv = document.createElement('div');
+        questionDiv.innerHTML = `
+            <p class="font-semibold">${index + 1}. ${question.text}</p>
+            <ul class="space-y-2">
+                ${question.options.map(option => `
+                    <li>
+                        <label class="flex items-center">
+                            <input type="radio" name="question_${index}" value="${option}" class="mr-2">
+                            ${option}
+                        </label>
+                    </li>
+                `).join('')}
+            </ul>
+        `;
+        quizModalForm.appendChild(questionDiv);
+    });
+
+    // Open modal
+    document.getElementById('openQuizModal').addEventListener('click', () => {
+        document.getElementById('quizModal').classList.remove('hidden');
+    });
+
+    // Close modal
+    document.getElementById('closeQuizModal').addEventListener('click', () => {
+        document.getElementById('quizModal').classList.add('hidden');
+    });
+
+    // Evaluate quiz on submit
+    document.getElementById('submitQuiz').addEventListener('click', (event) => {
+        event.preventDefault();
+        const formData = new FormData(quizModalForm);
+        const answers = {};
+        for (let [key, value] of formData.entries()) {
+            answers[key] = value;
+        }
+
+        let score = 0;
+        const correctAnswers = [];
+        quizQuestions.forEach((question, index) => {
+            if (answers[`question_${index}`] === question.answer) {
+                score += 5; // Each question is worth 5 points
+            }
+            correctAnswers.push(`${question.text} - Your Answer: ${answers[`question_${index}`] || "No answer"} - Correct Answer: ${question.answer}`);
+        });
+
+        // Update results
+        document.getElementById('score').textContent = score;
+        const answersList = document.getElementById('answers');
+        answersList.innerHTML = '';
+        correctAnswers.forEach((answer, index) => {
+            const li = document.createElement('li');
+            li.textContent = `${index + 1}. ${answer}`;
+            answersList.appendChild(li);
+        });
+
+        const feedback = document.getElementById('feedback');
+        feedback.textContent = score < 25
+            ? "Your vocabulary needs improvement. Consider watching educational videos."
+            : score < 35
+                ? "You're doing good, but there's room for improvement!"
+                : "Excellent! Your vocabulary is strong.";
+
+        document.getElementById('quizModal').classList.add('hidden');
+        document.getElementById('resultContainer').classList.remove('hidden');
+    });
+</script>
+
+{% endblock %}

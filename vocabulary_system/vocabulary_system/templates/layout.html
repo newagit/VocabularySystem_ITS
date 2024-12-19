@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title or "Vocabulary System" }}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="flex">
+        <nav class="bg-white shadow-md py-4">
+            <div class="container mx-auto flex justify-between items-center">
+                <a href="/" class="text-2xl font-bold text-blue-500">Vocabulary System</a>
+                <ul class="flex space-x-6">
+                    <li><a href="/" class="text-gray-600 hover:text-blue-500">Home</a></li>
+                    <li><a href="/about" class="text-gray-600 hover:text-blue-500">About</a></li>
+                    <li><a href="/contact" class="text-gray-600 hover:text-blue-500">Contact</a></li>
+                    <li><a href="/login" class="text-gray-600 hover:text-blue-500">Login</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!-- Include the sidebar only if it's defined -->
+        {% if sidebar %}
+            {% include sidebar %}
+        {% endif %}
+        <div class="flex-1 p-6">
+            {% block content %}{% endblock %}
+        </div>
+
+    </div>
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 Vocabulary System. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
